@@ -13,8 +13,8 @@ var alive = 1;
 var dead = 0;
 
 function setup() {
-    canvasWidth = 1750;
-    canvasHeight = 900;
+    canvasWidth = windowWidth - 10;
+    canvasHeight = windowHeight - 100;
     cellWidth = 15;
     createCanvas(canvasWidth, canvasHeight);
     columns = floor(width / cellWidth);
@@ -32,13 +32,13 @@ function setup() {
 
 function renderButtons() {
     const startButton = createButton('Start');
-    startButton.position(canvasWidth / 2 - 120, canvasHeight + cellWidth);
+    startButton.position(canvasWidth / 2 - 60, canvasHeight + cellWidth);
     startButton.mousePressed(startGame);
     const stopButton = createButton('Stop');
-    stopButton.position(canvasWidth / 2 - 60, canvasHeight + cellWidth);
+    stopButton.position(canvasWidth / 2, canvasHeight + cellWidth);
     stopButton.mousePressed(stopGame);
     const resetButton = createButton('Reset');
-    resetButton.position(canvasWidth / 2, canvasHeight + cellWidth);
+    resetButton.position(canvasWidth / 2 + 60, canvasHeight + cellWidth);
     resetButton.mousePressed(resetGame);
 }
 
@@ -47,14 +47,14 @@ function renderStatus() {
     statusPara.remove();
     statusPara = createP('Status: ' + status);
     statusPara.style('font-size', '16px');
-    statusPara.position(canvasWidth + cellWidth, 0);
+    statusPara.position(canvasWidth / 2 - 120, canvasHeight + cellWidth + 20);
 }
 
 function renderIteration() {
     iterationPara.remove();
     iterationPara = createP('Iteration: ' + String(iteration));
     iterationPara.style('font-size', '16px');
-    iterationPara.position(canvasWidth + cellWidth, 30);
+    iterationPara.position(canvasWidth / 2 + 60, canvasHeight + cellWidth + 20);
 }
 
 function draw() {
