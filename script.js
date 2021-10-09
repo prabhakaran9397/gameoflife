@@ -25,12 +25,10 @@ function setup() {
     hasStarted = false;
     statusPara = createP();
     iterationPara = createP();
-    renderButtons();
-    renderStatus();
-    renderIteration();
+    registerButtons();
 }
 
-function renderButtons() {
+function registerButtons() {
     const startButton = createButton('Start');
     startButton.position(canvasWidth / 2 - 60, canvasHeight + cellWidth);
     startButton.mousePressed(startGame);
